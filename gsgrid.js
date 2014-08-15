@@ -115,6 +115,7 @@
             args.eoff = args.eoff || 0.4;
             args.voff = args.voff || -0.1;
             for(var id in args) this[id] = args[id];
+            console.log(args.N, args.d, args.center, args.shaftwidth, args.loff, args.eoff, args.voff)
             
             // *** INIT VARIABLES ***
             var N = this.N;
