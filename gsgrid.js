@@ -116,8 +116,6 @@
             args.voff = args.voff || -0.1;
             for(var id in args) this[id] = args[id];
             
-            console.log(this);
-            
             // *** INIT VARIABLES ***
             var N = this.N;
             var d = this.d;
@@ -141,11 +139,11 @@
                 v1 = (i==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-2*N-1].vqd.v0
                 v2 = (i==-N)?(j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v1:gps[n-2*N-1].vqd.v3
                 v3 = (j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v0
+                console.log("Quad "+n+" has vertices "+v0.__id+", "+v1.__id+", "+v2.__id+", and "+v3.__id+".");
                 gps[n] = new GridPoint({ canvas: this.canvas, pos: center+d*(i*rhat+j*that), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
                 if ((j == N) && (i < N)) {i++; j=-N;} else j++;
             }
             
-            console.log(this);
                 
             this.__activated = true;
         }
