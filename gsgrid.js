@@ -1,6 +1,8 @@
 ;(function () {
     "use strict";
     
+    console.log("Started Grid:",Date.now());
+    
     function GridPoint(args) {
         if (!(this instanceof GridPoint)) return new GridPoint(args);
         if (this.__activated) {return this;}
@@ -125,8 +127,7 @@
             this.Nt = pow((2*this.N)+1,2);
             var gps = this.gps = {}                                                                                                 /////// *this.gps*              /////// REQUIRED
             var ohat = this.ohat = this.canvas.out();
-            console.log(this.canvas, this.N, this.d, this.center, this.shaftwidth, this.loff, this.eoff, this.voff)
-            console.log(this, this.canvas);
+            console.log(this.canvas);
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
@@ -253,4 +254,7 @@
 
     var exports = { GridPoint: GridPoint, Grid: Grid }
     Export(exports)
+
+    console.log("Ended Grid:",Date.now());
+    
 }) ();
