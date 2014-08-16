@@ -128,8 +128,9 @@
             console.log(ohat);
             var rhat = this.rhat = this.canvas.right();
             console.log(rhat);
-            console.log("Error is here!");
+            console.log("Error is after here!");
             var that = this.that = this.canvas.top();
+            console.log("Error is before here!");
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
