@@ -2,11 +2,11 @@
     "use strict";
     
     function GridPoint(args) {
-        console.log("Error is after here!");
         if (!(this instanceof GridPoint)) return new GridPoint(args);
         if (this.__activated) {return this;}
         this.__activated = true;
     
+        console.log("Error is after here!");
         args = args || {};
         // *** INIT PRELIMINARY ARGUMENTS ***
         this.canvas = args.canvas || canvas.selected; if (args.canvas) delete args.canvas;
