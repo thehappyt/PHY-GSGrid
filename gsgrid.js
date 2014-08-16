@@ -142,8 +142,8 @@
                 v3 = (j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v0
                 console.log("Error is after here!");
                 gps[n] = new GridPoint({ canvas: this.canvas, pos: center.add((rhat.multiply(i*d)).add(that.multiply(j*d))), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
-                if ((j == N) && (i < N)) {i++; j=-N;} else j++;
                 console.log("Error is before here!");
+                if ((j == N) && (i < N)) {i++; j=-N;} else j++;
             }
 
             this.__activated = true;
