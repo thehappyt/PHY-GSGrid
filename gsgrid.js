@@ -35,12 +35,12 @@
             if (!(x instanceof vec)) throw new Error("Gridpoint 'pos' attribute must be a vector.");
             var pos = this.canvas.inPlane(x);
             var ohat = this.grid.ohat, rhat = this.grid.rhat, that = this.grid.that, voff = this.grid.voff || -0.1;
-            this.lbl.pos = pos + ohat*(this.grid.loff || 0.0);
-            this.efv.pos = pos + ohat*(this.grid.eoff || 0.4);
-            this.vqd.v0.pos = pos + ohat*voff + 0.5*this.grid.d*( this.grid.rhat+this.grid.that);
-            this.vqd.v1.pos = pos + ohat*voff + 0.5*this.grid.d*(-this.grid.rhat+this.grid.that);
-            this.vqd.v2.pos = pos + ohat*voff + 0.5*this.grid.d*(-this.grid.rhat-this.grid.that);
-            this.vqd.v3.pos = pos + ohat*voff + 0.5*this.grid.d*( this.grid.rhat-this.grid.that);
+            this.lbl.pos = pos.add(ohat.multiply(this.grid.loff || 0.0));
+            this.efv.pos = pos.add(ohat.multiply(this.grid.eoff || 0.4));
+            this.vqd.v0.pos = pos.add((ohat.multiply(voff)).add((this.grid.rhat.add(this.grid.that)).multiply(0.5*this.grid.d)));
+            this.vqd.v1.pos = pos.add((ohat.multiply(voff)).sub((this.grid.rhat.sub(this.grid.that)).multiply(0.5*this.grid.d)));
+            this.vqd.v2.pos = pos.add((ohat.multiply(voff)).sub((this.grid.rhat.add(this.grid.that)).multiply(0.5*this.grid.d)));
+            this.vqd.v3.pos = pos.add((ohat.multiply(voff)).add((this.grid.rhat.sub(this.grid.that)).multiply(0.5*this.grid.d)));
         }
     });
     Object.defineProperty(GridPoint.prototype, "cleanUp",  { configurable: false, enumerable: true,  writable: false, 
@@ -115,7 +115,6 @@
             args.eoff = args.eoff || 0.4;
             args.voff = args.voff || -0.1;
             for(var id in args) this[id] = args[id];
-            console.log(args.N, args.d, args.center, args.shaftwidth, args.loff, args.eoff, args.voff)
             
             // *** INIT VARIABLES ***
             var N = this.N;
@@ -130,6 +129,7 @@
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
+            console.log(args.N, args.d, args.center, args.shaftwidth, args.loff, args.eoff, args.voff)
             console.log(this);
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
@@ -141,11 +141,10 @@
                 v2 = (i==-N)?(j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v1:gps[n-2*N-1].vqd.v3
                 v3 = (j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v0
                 console.log("Quad "+n+" has vertices "+v0.__id+", "+v1.__id+", "+v2.__id+", and "+v3.__id+".");
-                gps[n] = new GridPoint({ canvas: this.canvas, pos: center+d*(i*rhat+j*that), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
+                gps[n] = new GridPoint({ canvas: this.canvas, pos: center.add(rhat.multiply(i*d)+that.multiply(j*d)), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
                 if ((j == N) && (i < N)) {i++; j=-N;} else j++;
             }
-            
-                
+
             this.__activated = true;
         }
     })
