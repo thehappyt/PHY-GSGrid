@@ -125,7 +125,7 @@
             this.Nt = pow((2*this.N)+1,2);
             var gps = this.gps = {}                                                                                                 /////// *this.gps*              /////// REQUIRED
             var ohat = this.ohat = this.canvas.out();
-            console.log(ohat);
+            console.log(ohat, this.ohat, this.canvas);
             var rhat = this.rhat = this.canvas.right();
             console.log(rhat);
             console.log("Error is after here!");
