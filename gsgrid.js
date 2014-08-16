@@ -10,7 +10,6 @@
         // *** INIT PRELIMINARY ARGUMENTS ***
         this.canvas = args.canvas || canvas.selected; if (args.canvas) delete args.canvas;
         this.__gid = args.__gid || 0; if (args.__gid) delete args.__gid;
-        console.log("Error is after here!");
         this.grid = args.grid || new Grid({canvas: this.canvas}); if (args.grid) delete args.grid;
         this.d = args.d || args.grid.d || 1; if (args.d) delete args.d;
         args.shaftwidth = args.shaftwidth || this.grid.shaftwidth || 0.075;
@@ -18,6 +17,7 @@
         args.v1 = args.v1 || vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) });
         args.v2 = args.v2 || vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) });
         args.v3 = args.v3 || vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) });
+        console.log("Error is after here!");
         // *** INIT GRID and GRIDPOINTS (Label, Efield, VQuad) using PRELIMINARY VARIABLES ***
         this.lbl = label({ canvas: this.canvas, text: 'X', color: vec(0,1,0), height: 6, font: 'Verdana', box: false, line: false, opacity: 0, visible: false });
         this.efv = arrow({ canvas: this.canvas,  pickable: false, color:vec(0,0,0), axis_and_length: vec(0.5,0,0), shaftwidth: args.shaftwidth, visible: false });
