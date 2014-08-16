@@ -56,7 +56,7 @@
     Object.defineProperty(GridPoint.prototype, "visible", { configurable: false, enumerable: true,
         set: function(h) {
             if (h !== (!!h)) console.log("GridPoint.visible must be boolean, i.e. true or false, but "+h+" isn't boolean.");
-            this.lhide = h;
+            this.lhide = h; console.log("Got here first!");
             this.ehide = h;
             this.vhide = h
         }
