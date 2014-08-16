@@ -131,8 +131,8 @@
             console.log(ohat);
             console.log("Made it this far now:",Date.now());
             var rhat = this.rhat = this.canvas.right();
-            console.log("Made it this far finally:",Date.now());
             var that = this.that = this.canvas.top();
+            console.log("Made it this far finally:",Date.now());
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
