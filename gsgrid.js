@@ -115,7 +115,6 @@
             args.eoff = args.eoff || 0.4;
             args.voff = args.voff || -0.1;
             for(var id in args) this[id] = args[id];
-            console.log(this.canvas, this.d, this.d, this.center, this.shaftwidth, this.loff, this.eoff, this.voff)
             
             // *** INIT VARIABLES ***
             var N = this.N;
@@ -126,7 +125,8 @@
             this.Nt = pow((2*this.N)+1,2);
             var gps = this.gps = {}                                                                                                 /////// *this.gps*              /////// REQUIRED
             var ohat = this.ohat = this.canvas.out();
-            console.log(ohat);
+            console.log(this.canvas, this.N, this.d, this.center, this.shaftwidth, this.loff, this.eoff, this.voff)
+            console.log(this, this.canvas);
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
