@@ -127,9 +127,6 @@
             var ohat = this.ohat = this.canvas.out();
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
-            console.log("canvas.out is: ",ohat);
-            console.log("canvas.right is: ",rhat);
-            console.log("canvas.top is: ",that);
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
@@ -141,6 +138,7 @@
                 v2 = (i==-N)?(j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v1:gps[n-2*N-1].vqd.v3
                 v3 = (j==-N)?vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) }):gps[n-1].vqd.v0
                 console.log("Error is after here!");
+                console.log(center.add((rhat.multiply(i*d)).add(that.multiply(j*d))))
                 gps[n] = new GridPoint({ canvas: this.canvas, pos: center.add((rhat.multiply(i*d)).add(that.multiply(j*d))), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
                 console.log("Error is before here!");
                 if ((j == N) && (i < N)) {i++; j=-N;} else j++;
