@@ -125,6 +125,7 @@
             this.Nt = pow((2*this.N)+1,2);
             var gps = this.gps = {}                                                                                                 /////// *this.gps*              /////// REQUIRED
             var ohat = this.ohat = this.canvas.out();
+            console.log(ohat);
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
