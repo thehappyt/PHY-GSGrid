@@ -130,11 +130,11 @@
             console.log("canvas.out is: ",ohat);
             console.log("canvas.right is: ",rhat);
             console.log("canvas.top is: ",that);
-            console.log("Error is after here!");
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
             var v0, v1, v2, v3;
+            console.log("Error is after here!");
             for (var n = 1, i=-N, j=-N; n<=this.Nt; n++) {
                 // Need initial setup of efield vectors, HERE!
                 v0 = vertex({ canvas: this.canvas, opacity: 0.5, color: vec(1,1,1) });
