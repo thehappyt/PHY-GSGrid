@@ -117,6 +117,7 @@
             args.eoff = args.eoff || 0.4;
             args.voff = args.voff || -0.1;
             for(var id in args) this[id] = args[id];
+            console.log("Made it this far:",Date.now());
             
             // *** INIT VARIABLES ***
             var N = this.N;
@@ -131,6 +132,7 @@
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
+            console.log("Made it this far now:",Date.now());
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
             var v0, v1, v2, v3;
@@ -143,6 +145,7 @@
                 gps[n] = new GridPoint({ canvas: this.canvas, pos: center.add((rhat.multiply(i*d)).add(that.multiply(j*d))), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
                 if ((j == N) && (i < N)) {i++; j=-N;} else j++;
             }
+            console.log("Made it this far finally:",Date.now());
 
             this.__activated = true;
         }
