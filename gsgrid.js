@@ -30,12 +30,12 @@
     GridPoint.prototype.constructor = GridPoint;
     Object.defineProperty(GridPoint.prototype, "pos", { configurable: false, enumerable: true, get: function() {return this.lbl.pos;},
         set: function(x) {
-            console.log("Error is after here!");
             if (!(x instanceof vec)) throw new Error("Gridpoint 'pos' attribute must be a vector.");
             var pos = this.canvas.inPlane(x);
             var ohat = this.grid.ohat, rhat = this.grid.rhat, that = this.grid.that, voff = this.grid.voff || -0.1;
             this.lbl.pos = pos.add(ohat.multiply(this.grid.loff || 0.0));
             this.efv.pos = pos.add(ohat.multiply(this.grid.eoff || 0.4));
+            console.log("Error is after here!");
             this.vqd.v0.pos = pos.add((ohat.multiply(voff)).add((this.grid.rhat.add(this.grid.that)).multiply(0.5*this.grid.d)));
             this.vqd.v1.pos = pos.add((ohat.multiply(voff)).sub((this.grid.rhat.sub(this.grid.that)).multiply(0.5*this.grid.d)));
             this.vqd.v2.pos = pos.add((ohat.multiply(voff)).sub((this.grid.rhat.add(this.grid.that)).multiply(0.5*this.grid.d)));
