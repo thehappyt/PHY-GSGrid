@@ -172,7 +172,10 @@
             if (h !== this.__lhide) {
                 this.__lhide = h;
                 for (var i = 1; i <= this.Nt; i++) {
-                    if (this.__visible && (!this.gps[i].__lhide)) this.gps[i].lbl.visible = (!h);
+                    if (this.__visible && (!this.gps[i].__lhide)) {
+                        console.log("Got here!")
+                        this.gps[i].lbl.visible = (!h);
+                    }
                     else this.gps[i].lbl.visible = false;
                 }
             }
