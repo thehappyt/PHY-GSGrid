@@ -125,7 +125,7 @@
             var ohat = this.ohat = this.canvas.out();
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
-            this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
+            this.rcchg = false;     // Track changes to range or center of canvas.                                                   /////// this.rcchg
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
             var v0, v1, v2, v3;
