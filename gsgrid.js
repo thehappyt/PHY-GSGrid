@@ -6,11 +6,11 @@
         if (this.__activated) {return this;}
         this.__activated = true;
     
-        console.log("Error is after here!");
         args = args || {};
         // *** INIT PRELIMINARY ARGUMENTS ***
         this.canvas = args.canvas || canvas.selected; if (args.canvas) delete args.canvas;
         this.__gid = args.__gid || 0; if (args.__gid) delete args.__gid;
+        console.log("Error is after here!");
         this.grid = args.grid || new Grid({canvas: this.canvas}); if (args.grid) delete args.grid;
         this.d = args.d || args.grid.d || 1; if (args.d) delete args.d;
         args.shaftwidth = args.shaftwidth || this.grid.shaftwidth || 0.075;
