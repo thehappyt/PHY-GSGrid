@@ -21,10 +21,10 @@
         this.lbl = label({ canvas: this.canvas, text: 'X', color: vec(0,1,0), height: 6, font: 'Verdana', box: false, line: false, opacity: 0, visible: false });
         this.efv = arrow({ canvas: this.canvas,  pickable: false, color:vec(0,0,0), axis_and_length: vec(0.5,0,0), shaftwidth: args.shaftwidth, visible: false });
         this.vqd =  quad({ canvas: this.canvas, pickable: false, v0: args.v0, v1: args.v1, v2: args.v2, v3: args.v3, visible: false });     //  visible must come after v0, v1, v2, v3 in args (bug in Primitives.js)
-        console.log("Error is after here!");
         // *** DELETE PRELIMINARY ARGUMENTS ***
         delete args.shaftwidth; delete args.v0; delete args.v1; delete args.v2; delete args.v3;
         // *** SET REMAINING ARGUMENTS ***
+        console.log("Error is after here!");
         args.pos = args.pos || args.canvas.center;
         for(var id in args) this[id] = args[id];
         console.log("Error is before here!");
