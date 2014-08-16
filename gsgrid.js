@@ -129,9 +129,6 @@
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
-            console.log(args.N, args.d, args.center, args.shaftwidth, args.loff, args.eoff, args.voff)
-            console.log(this);
-            
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
             var v0, v1, v2, v3;
             for (var n = 1, i=-N, j=-N; n<=this.Nt; n++) {
