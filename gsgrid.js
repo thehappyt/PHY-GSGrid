@@ -25,14 +25,12 @@
         delete args.shaftwidth; delete args.v0; delete args.v1; delete args.v2; delete args.v3;
         // *** SET REMAINING ARGUMENTS ***
         args.pos = args.pos || args.canvas.center;
-        console.log("Error is after here!");
-        console.log(args)
         for(var id in args) this[id] = args[id];
-        console.log("Error is before here!");
     }
     GridPoint.prototype.constructor = GridPoint;
     Object.defineProperty(GridPoint.prototype, "pos", { configurable: false, enumerable: true, get: function() {return this.lbl.pos;},
         set: function(x) {
+            console.log("Error is after here!");
             if (!(x instanceof vec)) throw new Error("Gridpoint 'pos' attribute must be a vector.");
             var pos = this.canvas.inPlane(x);
             var ohat = this.grid.ohat, rhat = this.grid.rhat, that = this.grid.that, voff = this.grid.voff || -0.1;
@@ -42,6 +40,7 @@
             this.vqd.v1.pos = pos.add((ohat.multiply(voff)).sub((this.grid.rhat.sub(this.grid.that)).multiply(0.5*this.grid.d)));
             this.vqd.v2.pos = pos.add((ohat.multiply(voff)).sub((this.grid.rhat.add(this.grid.that)).multiply(0.5*this.grid.d)));
             this.vqd.v3.pos = pos.add((ohat.multiply(voff)).add((this.grid.rhat.sub(this.grid.that)).multiply(0.5*this.grid.d)));
+            console.log("Error is before here!");
         }
     });
     Object.defineProperty(GridPoint.prototype, "cleanUp",  { configurable: false, enumerable: true,  writable: false, 
