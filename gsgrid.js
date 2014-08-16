@@ -31,8 +31,8 @@
     Object.defineProperty(GridPoint.prototype, "pos", { configurable: false, enumerable: true, get: function() {return this.lbl.pos;},
         set: function(x) {
             if (!(x instanceof vec)) throw new Error("Gridpoint 'pos' attribute must be a vector.");
-            var pos = this.canvas.inPlane(x);
             console.log("Error is after here!");
+            var pos = this.canvas.inPlane(x);
             var ohat = this.grid.ohat, rhat = this.grid.rhat, that = this.grid.that, voff = this.grid.voff || -0.1;
             this.lbl.pos = pos.add(ohat.multiply(this.grid.loff || 0.0));
             this.efv.pos = pos.add(ohat.multiply(this.grid.eoff || 0.4));
