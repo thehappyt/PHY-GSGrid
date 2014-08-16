@@ -26,8 +26,8 @@
         // *** SET REMAINING ARGUMENTS ***
         console.log("Error is after here!");
         args.pos = args.pos || args.canvas.center;
-        for(var id in args) this[id] = args[id];
         console.log("Error is before here!");
+        for(var id in args) this[id] = args[id];
     }
     GridPoint.prototype.constructor = GridPoint;
     Object.defineProperty(GridPoint.prototype, "pos", { configurable: false, enumerable: true, get: function() {return this.lbl.pos;},
