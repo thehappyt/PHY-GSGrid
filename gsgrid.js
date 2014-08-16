@@ -127,11 +127,11 @@
             this.canvas.center = this.center;
             this.Nt = pow((2*this.N)+1,2);
             var gps = this.gps = {}                                                                                                 /////// *this.gps*              /////// REQUIRED
-            console.log(this.canvas);
-            console.log("Made it this far now:",Date.now());
             var ohat = this.ohat = this.canvas.out();
-            console.log("Made it this far finally:",Date.now());
+            console.log(ohat);
+            console.log("Made it this far now:",Date.now());
             var rhat = this.rhat = this.canvas.right();
+            console.log("Made it this far finally:",Date.now());
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
             
