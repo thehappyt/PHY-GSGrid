@@ -127,12 +127,12 @@
             this.canvas.center = this.center;
             this.Nt = pow((2*this.N)+1,2);
             var gps = this.gps = {}                                                                                                 /////// *this.gps*              /////// REQUIRED
-            var ohat = this.ohat = this.canvas.out();
             console.log(this.canvas);
+            console.log("Made it this far now:",Date.now());
+            var ohat = this.ohat = this.canvas.out();
             var rhat = this.rhat = this.canvas.right();
             var that = this.that = this.canvas.top();
             this.rcchg = false;     // Track changes to range or center of scene.                                                   /////// this.rcchg
-            console.log("Made it this far now:",Date.now());
             
             // *** INIT ALL GRIDPOINTS (Labels, Efields, VQuads) ***
             var v0, v1, v2, v3;
