@@ -139,11 +139,11 @@
                 if ((j == N) && (i < N)) {i++; j=-N;} else j++;
             }
             
-            this.canvas.elements.bind("mousewheel", function() {
+            this.canvas.elements.bind("mousewheel", function(self) {
                 //this.rcchg = true;
                 print("Hello!");
-                this.update();
-            });
+                self.update.call(self);
+            }(this) );
 
             this.__activated = true;
         }
