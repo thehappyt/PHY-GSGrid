@@ -142,17 +142,9 @@
             var self = this;
             this.canvas.elements.bind("mousewheel", function() {
                 //this.rcchg = true;
-                console.log(self);
-                //this.update();
+                print(self.canvas.range);
+                self.update();
             } );
-            
-            /*
-            this.canvas.elements.bind("mousewheel", function(self) {
-                //this.rcchg = true;
-                print("Hello!");
-                //self.update.call(self);
-            }(this) );
-            */
 
             this.__activated = true;
         }
