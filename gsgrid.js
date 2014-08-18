@@ -151,6 +151,7 @@
     Object.defineProperty( Grid.prototype, "update", { configurable: false, enumerable: true,  writable: false,
         value: function() {
             var self = this;
+            console.log(self);
             self.visible=false;
             clearTimeout($.data(self.canvas, 'timer'));
             $.data(self.canvas, 'timer', setTimeout(function() {
