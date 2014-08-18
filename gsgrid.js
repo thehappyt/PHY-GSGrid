@@ -138,10 +138,11 @@
                 gps[n] = new GridPoint({ canvas: this.canvas, pos: center.add((rhat.multiply(i*d)).add(that.multiply(j*d))), grid: this, __gid: n, d: this.d, v0: v0, v1: v1, v2: v2, v3: v3 });        // , shaftwidth: this.shaftwidth
                 if ((j == N) && (i < N)) {i++; j=-N;} else j++;
             }
-            //.elements
-            this.canvas.bind("mousewheel", function() {
+            
+            var self = this;
+            this.canvas.elements.bind("mousewheel", function() {
                 //this.rcchg = true;
-                console.log(this);
+                console.log(self);
                 //this.update();
             } );
             
