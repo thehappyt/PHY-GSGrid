@@ -142,7 +142,7 @@
             this.canvas.bind("mousewheel", function(self) {
                 //this.rcchg = true;
                 print("Hello!");
-                self.update.call(self);
+                //self.update.call(self);
             }(this) );
 
             this.__activated = true;
