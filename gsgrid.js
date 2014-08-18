@@ -192,7 +192,7 @@
                 
                 //__changed = {}
                 self.visible=true;
-            }, 250));
+            }, 2500));
             
         }
     })
