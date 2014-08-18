@@ -165,7 +165,7 @@
                 var rhat = this.rhat = self.canvas.right();
                 var that = this.that = self.canvas.top();
 
-                for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
+                for (var i = -N; i <= N; i++) { for (var j = -N; j <= N; j++){
                     console.log(i); console.log(j);
                     gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)));
                 } }
