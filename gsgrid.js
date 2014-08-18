@@ -250,13 +250,13 @@
             if (v != (!!v)) throw new Error("'visible' must be boolean, i.e. true or false.");
             if (v !== this.__visible) {
                 this.__visible = v;
-                for (var i = 1; i <= this.Nt; i++ ) {
-                    if ((!this.__lhide) && (!this.gps[i].__lhide)) this.gps[i].lbl.visible = v;
-                    else this.gps[i].lbl.visible = false;
-                    if ((!this.__ehide) && (!this.gps[i].__ehide)) this.gps[i].efv.visible = v;
-                    else this.gps[i].efv.visible = false;
-                    if ((!this.__qhide) && (!this.gps[i].__vhide)) this.gps[i].vqd.visible = v;
-                    else this.gps[i].vqd.visible = false;
+                for (var n = 1; n <= this.Nt; n++ ) {
+                    if ((!this.__lhide) && (!this.gps[n].__lhide)) this.gps[n].lbl.visible = v;
+                    else this.gps[n].lbl.visible = false;
+                    if ((!this.__ehide) && (!this.gps[n].__ehide)) this.gps[n].efv.visible = v;
+                    else this.gps[n].efv.visible = false;
+                    if ((!this.__vhide) && (!this.gps[n].__vhide)) this.gps[n].vqd.visible = v;
+                    else this.gps[n].vqd.visible = false;
                 }
             } 
         }
