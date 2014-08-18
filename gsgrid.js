@@ -151,7 +151,6 @@
     Object.defineProperty( Grid.prototype, "update_rca", { configurable: false, enumerable: true,  writable: false,
         value: function() {
             var self = this;
-            console.log(this);
             self.visible=false;
             clearTimeout($.data(self.canvas, 'timer'));
             $.data(self.canvas, 'timer', setTimeout(function() {
@@ -167,8 +166,8 @@
                 var that = this.that = self.canvas.top();
 
                 for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
-                    console.log(i,j)
-                    gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)))
+                    console.log(i); console.log(j);
+                    gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)));
                 } }
                 self.rcchg = false;
 
