@@ -166,6 +166,8 @@
                 var ohat = this.ohat = this.canvas.out();
                 var rhat = this.rhat = this.canvas.right();
                 var that = this.that = this.canvas.top();
+
+                console.log("Error After Here Too!");
                 
                 for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
                     gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)))
@@ -176,7 +178,6 @@
                 
                 //__changed = {}
                 self.visible=true;
-                console.log("Error Before Here!");
             }, 250));
             
         }
