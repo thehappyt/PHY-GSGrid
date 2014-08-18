@@ -158,7 +158,7 @@
                 if (!self.__activated) {return;}
                 
                 var gps=self.gps
-                console.log("Got Here!");
+                console.log("Error After Here!");
                 
                 var N = self.N
                 var d = self.d = self.canvas.range/(self.N + 0.25)
@@ -176,7 +176,8 @@
                 
                 //__changed = {}
                 self.visible=true;
-            }, 2500));
+                console.log("Error Before Here!");
+            }, 250));
             
         }
     })
