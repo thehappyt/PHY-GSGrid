@@ -142,7 +142,7 @@
             this.canvas.elements.bind("mousewheel", function() {
                 //this.rcchg = true;
                 //this.update();
-                //print(this.canvas.range)
+                print("Hello!");
             });
 
             this.__activated = true;
