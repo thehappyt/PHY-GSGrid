@@ -163,11 +163,10 @@
                 var N = self.N
                 var d = self.d = self.canvas.range/(self.N + 0.25)
                 var center = self.center = self.canvas.center;
-                var ohat = this.ohat = this.canvas.out();
-                var rhat = this.rhat = this.canvas.right();
-                var that = this.that = this.canvas.top();
+                var ohat = this.ohat = self.canvas.out();
+                var rhat = this.rhat = self.canvas.right();
+                var that = this.that = self.canvas.top();
 
-                console.log("Error After Here Too!");
                 
                 for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
                     gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)))
@@ -178,6 +177,7 @@
                 
                 //__changed = {}
                 self.visible=true;
+                console.log("Error After Here Too!");
             }, 250));
             
         }
