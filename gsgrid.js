@@ -141,54 +141,37 @@
             
             var self = this;
             this.canvas.elements.bind("mousewheel", function() {
-                //this.rcchg = true;
                 print(self.canvas.range);
-                self.update();
+                self.update_rca();
             } );
 
             this.__activated = true;
         }
     })
-    Object.defineProperty( Grid.prototype, "update", { configurable: false, enumerable: true,  writable: false,
+    Object.defineProperty( Grid.prototype, "update_rca", { configurable: false, enumerable: true,  writable: false,
         value: function() {
             var self = this;
-            console.log("Got Here!");
+            console.log(this);
             self.visible=false;
             clearTimeout($.data(self.canvas, 'timer'));
             $.data(self.canvas, 'timer', setTimeout(function() {
                 if (!self.__activated) {return;}
                 
-                var gps=self.gps //, efvo, efv, anl
+                var gps=self.gps
+                console.log("Got Here!");
                 
-                if (self.rcchg) {
-                    var N = self.N
-                    var d = self.d = self.canvas.range/(self.N + 0.25)
-                    var center = self.center = self.canvas.center;
-                    var ohat = this.ohat = this.canvas.out();
-                    var rhat = this.rhat = this.canvas.right();
-                    var that = this.that = this.canvas.top();
-                    
-                    for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
-                        gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)))
-                    } }
-                    self.rcchg = false;
-                }
+                var N = self.N
+                var d = self.d = self.canvas.range/(self.N + 0.25)
+                var center = self.center = self.canvas.center;
+                var ohat = this.ohat = this.canvas.out();
+                var rhat = this.rhat = this.canvas.right();
+                var that = this.that = this.canvas.top();
                 
-                /*
-                for (var j in __changed) {
-                    for (var i in gps) {
-                        anl = gps[i].efv.axis_and_length
-                        efvo = __changed[j].efvo[i];
-                        efv  = __changed[j].efv[i]
-                        if (!gps[i].__ehide && efv === null) gps[i].__ehide = true;
-                        if (gps[i].__ehide  && efv !== null) gps[i].__ehide = false;
-                        anl = anl - ((!!efvo)?efvo:vec(0,0,0));
-                        anl = anl + ((!!efv)?efv:vec(0,0,0));
-                        gps[i].efv.axis_and_length = anl
-                    }
-                }
-                */
-                
+                for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
+                    gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)))
+                } }
+                self.rcchg = false;
+
                 // Need update routines for quads, HERE!
                 
                 //__changed = {}
