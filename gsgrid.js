@@ -157,8 +157,7 @@
             $.data(self.canvas, 'timer', setTimeout(function() {
                 if (!self.__activated) {return;}
                 
-                var gps=self.gps
-                console.log("Error After Here!");
+                var gps = self.gps
                 
                 var N = self.N
                 var d = self.d = self.canvas.range/(self.N + 0.25)
@@ -167,6 +166,7 @@
                 var rhat = this.rhat = self.canvas.right();
                 var that = this.that = self.canvas.top();
 
+                console.log(gps)
                 
                 for (var i = -N; j <= N; i++) { for (var j = -N; j <= N; j++){
                     gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)))
@@ -177,7 +177,6 @@
                 
                 //__changed = {}
                 self.visible=true;
-                console.log("Error After Here Too!");
             }, 250));
             
         }
