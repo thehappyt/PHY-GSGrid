@@ -169,11 +169,9 @@
                     console.log(i,j);
                     gps[((i+N)*(2*N+1)+(j+N)+1)].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)));
                 } }
-                self.rcchg = false;
 
-                // Need update routines for quads, HERE!
-                
-                //__changed = {}
+                // Need to update E-fields and Potentials here!
+
                 self.visible=true;
             }, 250));
             
