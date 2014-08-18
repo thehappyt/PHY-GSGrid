@@ -167,7 +167,7 @@
 
                 for (var i = -N; i <= N; i++) { for (var j = -N; j <= N; j++){
                     console.log(i,j);
-                    gps[(((i+N)*self.Nt)+(j+N+1))].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)));
+                    gps[((i+N)*(2*N+1)+(j+N)+1)].pos = center.add((rhat.multiply(i*d)).add(that.multiply(j*d)));
                 } }
                 self.rcchg = false;
 
