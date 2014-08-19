@@ -26,6 +26,12 @@
         // *** SET REMAINING ARGUMENTS ***
         args.pos = args.pos || args.canvas.center;
         for(var id in args) this[id] = args[id];
+        
+        var E = this.E = {};
+        var V0 = this.V0 = {};
+        var V0 = this.V1 = {};
+        var V0 = this.V2 = {};
+        var V0 = this.V3 = {};
     }
     GridPoint.prototype.constructor = GridPoint;
     Object.defineProperty(GridPoint.prototype, "pos", { configurable: false, enumerable: true, get: function() {return this.lbl.pos;},
@@ -112,6 +118,7 @@
             args.loff = args.loff || 0.0;
             args.eoff = args.eoff || 0.4;
             args.voff = args.voff || -0.1;
+            args.sources = args.sources || {};
             for(var id in args) this[id] = args[id];
 
             // *** INIT VARIABLES ***
